@@ -9,6 +9,9 @@ import os
 load_dotenv()
 TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(TOKEN)
+admin_ids_str = os.getenv('ADMIN_IDS', '')
+admins = list(map(int, admin_ids_str.split(','))) if admin_ids_str else []
+DB_PATH = os.getenv('DATABASE_PATH', '/tmp/Form.db')
 logger = logging.getLogger(__name__)
 
 
